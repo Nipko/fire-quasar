@@ -36,6 +36,8 @@ The keys have variables that can be changed at the time of deployment according 
 
 ## Installation App
 [![Build Status](./folder_docker.png)]()
+
+
 In the folder {source_app}/deployment/Dockerfile
 
 run the command, which creates the container with the image
