@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "85cad503-0e27-4492-8733-f02c0cb1ceaf",
+		"name": "MELI - Quasar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetLocation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"satellites\": [\r\n\t\t{\r\n\t\t\t\"name\": \"kenobi\",\r\n\t\t\t\"distance\": 100.0,\r\n\t\t\t\"message\": [\"este\",\"\",\"\",\"mensaje\",\"\"]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"skywalker\",\r\n\t\t\t\"distance\": 115.5,\r\n\t\t\t\"message\": [\"\",\"es\",\"\",\"\",\"secreto\"]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"sato\",\r\n\t\t\t\"distance\": 142.7,\r\n\t\t\t\"message\": [\"este\",\"\",\"un\",\"\",\"\"]\r\n\t\t}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/topsecret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"topsecret"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Satellite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\"distance\": 330,\r\n\t\t\"message\": [\"este\", \"es\", \"\", \"\", \"secreto\"]\r\n\t}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/topsecret_split/kenobi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"topsecret_split",
+						"kenobi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Satellite",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/topsecret_split/sato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"topsecret_split",
+						"sato"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
