@@ -7,9 +7,20 @@ It is ultra classified, but is rumored to carry rations and weaponry for a
 entire legion.
 
 ## The project
-
 Web project developed with Java 11, Springboot Framework and MongoBD.
+
+## Development requirements 
+- JDk 11
+- IDE (Intellij, eclipse...)
+- Docker, image mongodb:latest / mongobd installed local
+- postman (test Api)
+
 [![Build Status](https://ertan-toker.de/wp-content/uploads/2018/04/spring-boot-project-logo-2-256x256.png)]()
+
+## Variabilized 
+The keys have variables that can be changed at the time of deployment according to the needs, it makes the app very parameterizable. For example:
+[![Build Status](./parametrizable_deploy.png)]()
+
 ## Dependencies
 
 | Name | version | Description |
@@ -24,22 +35,34 @@ Web project developed with Java 11, Springboot Framework and MongoBD.
 |trilateration| 1.0.2|Solves a formulation of n-D space trilateration problem using a nonlinear least squares optimizer |
 
 ## Installation App
+[![Build Status](./folder_docker.png)]()
 In the folder {source_app}/deployment/Dockerfile
 
-[![Build Status](./folder_docker.png)]()
-## Api Rest
+run the command, which creates the container with the image
+```sh
+docker build -t "NAME_CONTAINER" -f Dockerfile .
+```
 
+
+## Api Rest
+Apis that has the application exposed
 | Method | Name Method | Path|Params|
 | ------ | ------ | ------ | ------ |
 | Post | responseTopSecret |/topsecret|
 | Post | sendMessageToSatellite |/topsecret_split|{name_satellite}|
 | Get | getMessageFromSatellite |/topsecret_split|{name_satellite}|
 
+## Colletions
+int the folder {source_app}/deployment/collections
+you can find the collection to test api with postman
+[![Build Status](./collection_postman.png)]()
+
 ## Installation MongoDB - Docker 
 [![Build Status](https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png)]()
 
+the following command is executed to create a container with the mongodb image:
 ```sh
-docker run -d --name mongodb -p 127.0.0.1:27017:27017 -d mongo
+docker run -d --name mongodb -p 27017:27017 -d mongo
 ```
 
 ## Configuration MongoDB
@@ -50,12 +73,5 @@ spring.data.mongodb.database=${MONGODB_DATABASE:mongo}
 spring.data.mongodb.repositories.enabled=true
 ```
 
-| Key | description | Path|
-| ------ | ------ | ------ | 
-| Post | responseTopSecret |/topsecret|
-| Post | sendMessageToSatellite |/topsecret_split|
-| Get | getMessageFromSatellite |/topsecret_split|
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-
