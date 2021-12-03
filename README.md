@@ -9,6 +9,8 @@ entire legion.
 ## The project
 Web project developed with Java 11, Springboot Framework and MongoBD.
 
+[![Build Status](./diag_deploy.png)]()
+
 ## Development requirements 
 - JDk 11
 - IDE (Intellij, eclipse...)
